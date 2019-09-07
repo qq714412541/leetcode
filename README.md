@@ -1,1 +1,2 @@
 # leetcode
+#implement by python
