@@ -1,0 +1,28 @@
+class Solution:
+    def twoSum(self, nums:list, target: int):
+
+        temp_dict = {}
+        result_list = []
+
+        for i in range(len(nums)):
+            print(i)
+            if nums[i] in temp_dict:
+
+                result_list.extend([i,temp_dict[nums[i]]])
+            else:
+                temp_dict[target - nums[i]] = i
+
+        return result_list
+if __name__ == '__main__':
+    solution = Solution()
+    a = [6,8,4,2,1,3,4,5]
+    b = 5
+    result = solution.twoSum(a,b)
+    print(result)
+
+#idea: 1 save value and index into dict or set
+#2 travese the input nums to get what it need for current index  exm:{-1: 0, -3: 1, 1: 2, 3: 3}
+#3 O(n) like array to find others in list which equals to needed
+#4 return to a new list to save index-double
+
+#5 it may be neccessary to add False for list is too short
